@@ -28,25 +28,43 @@ public class PlayerControllerF : MonoBehaviour
 
     public void rightClick()
     {
-        if(_animator.GetFloat("speed") == 0)
+        if (_animator.GetBool("isLeft"))
         {
+            _animator.SetBool("rotate", true);
             _animator.SetFloat("speed", 1);
         }
-        else if(_animator.GetFloat("speed") == 1)
+        else
         {
-            _animator.SetFloat("speed", 2);
+            if (_animator.GetFloat("speed") == 0)
+            {
+                _animator.SetFloat("speed", 1);
+            }
+            else if (_animator.GetFloat("speed") == 1)
+            {
+                _animator.SetFloat("speed", 2);
+            }
         }
+        
     }
 
     public void leftClick()
     {
-        if (_animator.GetFloat("speed") == 0)
+        if (!_animator.GetBool("isLeft"))
         {
+            _animator.SetBool("rotate", true);
             _animator.SetFloat("speed", 1);
-        }
-        else if (_animator.GetFloat("speed") == 1)
+        }   
+        else
         {
-            _animator.SetFloat("speed", 2);
+            if (_animator.GetFloat("speed") == 0)
+            {
+                _animator.SetFloat("speed", 1);
+            }
+            else if (_animator.GetFloat("speed") == 1)
+            {
+                _animator.SetFloat("speed", 2);
+            }
         }
+        
     }
 }

@@ -2,16 +2,12 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class move : StateMachineBehaviour
+public class idle : StateMachineBehaviour
 {
-    private float _direction = 1;
     // OnStateEnter is called when a transition starts and the state machine starts to evaluate this state
-    override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
-    {
-        _direction = animator.GetBool("isLeft") ? -1 : 1;
-        Debug.Log(_direction);
-        animator.transform.eulerAngles = animator.GetBool("isLeft") ? new Vector3(0, 280, 0) : new Vector3(0, 80, 0);
-    }
+    //override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
+    //{
+    //}
 
     // OnStateUpdate is called on each Update frame between OnStateEnter and OnStateExit callbacks
     //override public void OnStateUpdate(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
@@ -26,19 +22,10 @@ public class move : StateMachineBehaviour
     //}
 
     // OnStateMove is called right after Animator.OnAnimatorMove()
-    override public void OnStateMove(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
-    {
-        if(animator.GetFloat("speed") >=2)
-        {
-            animator.transform.position += new Vector3(0.02f * _direction, 0, 0);
-        }
-            
-        else
-        {
-            animator.transform.position += new Vector3(0.005f* _direction, 0, 0);
-        }
-            
-    }
+    //override public void OnStateMove(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
+    //{
+    //    // Implement code that processes and affects root motion
+    //}
 
     // OnStateIK is called right after Animator.OnAnimatorIK()
     //override public void OnStateIK(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
