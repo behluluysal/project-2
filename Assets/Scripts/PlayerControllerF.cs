@@ -8,6 +8,8 @@ public class PlayerControllerF : MonoBehaviour
     public static PlayerControllerF Instance;
     [SerializeField] private GameObject _player;
     [SerializeField] private Animator _animator;
+
+    public int playerDamage = 20;
     private int direction = 1;
     void Awake()
     {

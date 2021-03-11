@@ -5,6 +5,7 @@ using UnityEngine.AI;
 
 public class Enemy : MonoBehaviour
 {
+    public static Enemy enemyInstance;
     [SerializeField] private float _lookRadius = 20f;
     [SerializeField] private Transform _target;
     [SerializeField] private NavMeshAgent _agent;
@@ -12,6 +13,12 @@ public class Enemy : MonoBehaviour
     [SerializeField] private float _nextTimeToAttack = 1f;
     [SerializeField] private Animator _animator;
     private float _attackRate = 0f;
+    public int enemyHealth = 100;
+
+    void Awake()
+    {
+        enemyInstance = this;
+    }
 
     void Start()
     {
@@ -64,11 +71,11 @@ public class Enemy : MonoBehaviour
     {
         _animator.SetBool("isAttack", false);
         _animator.SetBool("GetHit", true);
-        /*enemyHealth -= amount;
+        enemyHealth -= amount;
         if (enemyHealth <= 0)
         {
             Die();
-        }*/
+        }
     }
 
     //Die animasyonu set edilecek ve obje yokedilecek.
@@ -89,7 +96,7 @@ public class Enemy : MonoBehaviour
     {
         if (other.CompareTag("Sword"))
         {
-            //TakeDamage(PlayerControllerF.Instance.playerDamage);
+            TakeDamage(PlayerControllerF.Instance.playerDamage);
         }
     }
 }
