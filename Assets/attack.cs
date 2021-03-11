@@ -24,10 +24,10 @@ public class attack : StateMachineBehaviour
     //}
 
     // OnStateMove is called right after Animator.OnAnimatorMove()
-    //override public void OnStateMove(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
-    //{
-    //    // Implement code that processes and affects root motion
-    //}
+    override public void OnStateMove(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
+    {
+        animator.transform.position += new Vector3(0.02f, 0, 0);
+    }
 
     // OnStateIK is called right after Animator.OnAnimatorIK()
     //override public void OnStateIK(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)

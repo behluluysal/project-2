@@ -211,7 +211,7 @@ AnimatorState:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: Ekard_Attack_02_h
-  m_Speed: 1
+  m_Speed: 1.5
   m_CycleOffset: 0
   m_Transitions:
   - {fileID: 1101614354828676986}
@@ -238,7 +238,7 @@ AnimatorState:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: Ekard_Attack_01_h
-  m_Speed: 1
+  m_Speed: 1.5
   m_CycleOffset: 0
   m_Transitions:
   - {fileID: 1101866305197158302}
@@ -319,7 +319,7 @@ AnimatorState:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: Ekard_Skill_01_h
-  m_Speed: 1
+  m_Speed: 1.5
   m_CycleOffset: 0
   m_Transitions:
   - {fileID: 1101313189420029400}
@@ -391,7 +391,7 @@ AnimatorStateMachine:
     m_Position: {x: 374.31317, y: 287.4399, z: 0}
   - serializedVersion: 1
     m_State: {fileID: 1102631126811147160}
-    m_Position: {x: 446.79187, y: 510.4621, z: 0}
+    m_Position: {x: 620, y: 470, z: 0}
   - serializedVersion: 1
     m_State: {fileID: 1102157227056867942}
     m_Position: {x: 376.03552, y: 405.25854, z: 0}
