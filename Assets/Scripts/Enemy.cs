@@ -15,6 +15,7 @@ public class Enemy : MonoBehaviour
     private float _attackRate = 0f;
     public int enemyHealth = 100;
     [SerializeField] private GameObject _player;
+    Rigidbody rb;
     void Awake()
     {
         enemyInstance = this;
@@ -25,9 +26,10 @@ public class Enemy : MonoBehaviour
         _target = PlayerControllerF.Instance.transform;
         _agent = GetComponent<NavMeshAgent>();
         _player = GameObject.FindGameObjectWithTag("Player");
+        rb = GetComponent<Rigidbody>();
     }
 
-    void Update()
+    void FixedUpdate()
     {
         Agent();
     }
@@ -71,6 +73,7 @@ public class Enemy : MonoBehaviour
     {
         _animator.SetBool("isAttack", false);
         _animator.SetBool("GetHit", true);
+        rb.AddForce(-transform.forward * 3f, ForceMode.Impulse);
         enemyHealth -= amount;
         if (enemyHealth <= 0)
         {
