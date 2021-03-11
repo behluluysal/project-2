@@ -31,8 +31,12 @@ public class PlayerControllerF : MonoBehaviour
     {
         if (_animator.GetBool("isLeft"))
         {
-            _animator.SetBool("rotate", true);
-            _animator.SetFloat("speed", 1);
+            if(_animator.GetFloat("speed") == 0)
+                _animator.SetBool("rotate", true);
+            else if (_animator.GetFloat("speed") == 1)
+                _animator.SetFloat("speed", 0);
+            else if (_animator.GetFloat("speed") == 2)
+                _animator.SetFloat("speed", 1);
         }
         else
         {
@@ -52,8 +56,13 @@ public class PlayerControllerF : MonoBehaviour
     {
         if (!_animator.GetBool("isLeft"))
         {
-            _animator.SetBool("rotate", true);
-            _animator.SetFloat("speed", 1);
+            if (_animator.GetFloat("speed") == 0)
+                _animator.SetBool("rotate", true);
+            else if (_animator.GetFloat("speed") == 1)
+                _animator.SetFloat("speed", 0);
+            else if (_animator.GetFloat("speed") == 2)
+                _animator.SetFloat("speed", 1);
+            Debug.Log("girdi");
         }   
         else
         {
@@ -67,5 +76,18 @@ public class PlayerControllerF : MonoBehaviour
             }
         }
         
+    }
+
+    public void Attack()
+    {
+        if (_animator.GetFloat("speed") >= 2)
+        {
+            _animator.SetBool("Dash&Attack",true);
+        }
+        else if(_animator.GetFloat("speed") <= 1)
+        {
+            _animator.SetBool("attack", true);
+
+        }
     }
 }
