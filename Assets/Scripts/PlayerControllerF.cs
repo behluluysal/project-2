@@ -9,7 +9,7 @@ public class PlayerControllerF : MonoBehaviour
     [SerializeField] private GameObject _player;
     [SerializeField] private Animator _animator;
     private int direction = 1;
-    void Start()
+    void Awake()
     {
         Instance = this;   
     }

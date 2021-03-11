@@ -37,10 +37,7 @@ public class Enemy : MonoBehaviour
                 {
                     FaceTarget();
                     Debug.Log("ATTACK!");
-                    /*if (enemyHealth > 0)
-                    {
-                        Attack();
-                    }*/
+                    Attack();
                     _attackRate = 0f;
                 }
             }
@@ -50,6 +47,7 @@ public class Enemy : MonoBehaviour
     void Attack()
     {
         //ATTACK ANIMASYONU SET EDILECEK VE PLAYER'A DAMAGE VERECEK.
+        _animator.SetBool("isAttack", true);
         //PlayerController.playerInstance.TakeDamage(_enemyDamage);
     }
 
