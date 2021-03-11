@@ -5,12 +5,13 @@ using UnityEngine;
 public class PlayerControllerF : MonoBehaviour
 {
     // Start is called before the first frame update
+    public static PlayerControllerF Instance;
     [SerializeField] private GameObject _player;
     [SerializeField] private Animator _animator;
     private int direction = 1;
     void Start()
     {
-        
+        Instance = this;   
     }
 
     // Update is called once per frame
