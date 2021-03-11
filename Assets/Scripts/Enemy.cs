@@ -14,7 +14,7 @@ public class Enemy : MonoBehaviour
     [SerializeField] private Animator _animator;
     private float _attackRate = 0f;
     public int enemyHealth = 100;
-
+    [SerializeField] private GameObject _player;
     void Awake()
     {
         enemyInstance = this;
@@ -24,6 +24,7 @@ public class Enemy : MonoBehaviour
     {
         _target = PlayerControllerF.Instance.transform;
         _agent = GetComponent<NavMeshAgent>();
+        _player = GameObject.FindGameObjectWithTag("Player");
     }
 
     void Update()
@@ -43,7 +44,6 @@ public class Enemy : MonoBehaviour
                 if (/*PlayerControllerF.Instance.playerHealth > 0 &&*/ _attackRate > _nextTimeToAttack)
                 {
                     FaceTarget();
-                    Debug.Log("ATTACK!");
                     Attack();
                     _attackRate = 0f;
                 }
