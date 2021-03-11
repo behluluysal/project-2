@@ -6,6 +6,8 @@ public class PlayerControllerF : MonoBehaviour
 {
     // Start is called before the first frame update
     [SerializeField] private GameObject _player;
+    [SerializeField] private Animator _animator;
+    private int direction = 1;
     void Start()
     {
         
@@ -21,6 +23,30 @@ public class PlayerControllerF : MonoBehaviour
         else if (Input.GetKeyDown(KeyCode.A))
         {
             _player.transform.position += new Vector3(-2, 0, 0);
+        }
+    }
+
+    public void rightClick()
+    {
+        if(_animator.GetFloat("speed") == 0)
+        {
+            _animator.SetFloat("speed", 1);
+        }
+        else if(_animator.GetFloat("speed") == 1)
+        {
+            _animator.SetFloat("speed", 2);
+        }
+    }
+
+    public void leftClick()
+    {
+        if (_animator.GetFloat("speed") == 0)
+        {
+            _animator.SetFloat("speed", 1);
+        }
+        else if (_animator.GetFloat("speed") == 1)
+        {
+            _animator.SetFloat("speed", 2);
         }
     }
 }
