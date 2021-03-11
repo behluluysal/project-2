@@ -62,8 +62,8 @@ public class Enemy : MonoBehaviour
     //GetHit animasyonu set edilecek ve can 0 olunca Die fonksiyonu çağırılacak.
     public void TakeDamage(int amount)
     {
-        /*_animator.SetBool("isPunching", false);
-        _animator.SetBool("isGetHit", true);*/
+        _animator.SetBool("isAttack", false);
+        _animator.SetBool("GetHit", true);
         /*enemyHealth -= amount;
         if (enemyHealth <= 0)
         {
@@ -74,7 +74,7 @@ public class Enemy : MonoBehaviour
     //Die animasyonu set edilecek ve obje yokedilecek.
     void Die()
     {
-        //Die animations will set
+        _animator.SetBool("isDead", true);
         Destroy(gameObject, 2.5f);
     }
 
